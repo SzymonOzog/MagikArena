@@ -7,7 +7,7 @@
 #include "BaseSpell.generated.h"
 
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ABaseSpell : public AActor
+class MAGIKARENA_API ABaseSpell : public AActor
 {
 	GENERATED_BODY()
 	

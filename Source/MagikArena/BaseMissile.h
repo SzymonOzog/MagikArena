@@ -7,7 +7,7 @@
 #include "BaseMissile.generated.h"
 
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ABaseMissile : public AActor
+class MAGIKARENA_API ABaseMissile : public AActor
 {
 	GENERATED_BODY()
 	

@@ -7,7 +7,7 @@
 #include "Explosion.generated.h"
 
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API AExplosion : public AActor
+class MAGIKARENA_API AExplosion : public AActor
 {
 	GENERATED_BODY()
 	

@@ -7,7 +7,7 @@
 #include "Spikes.generated.h"
 
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ASpikes : public AActor
+class MAGIKARENA_API ASpikes : public AActor
 {
 	GENERATED_BODY()
 	

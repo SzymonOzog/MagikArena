@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API AAirMissile : public ABaseMissile
+class MAGIKARENA_API AAirMissile : public ABaseMissile
 {
 	GENERATED_BODY()
 public:

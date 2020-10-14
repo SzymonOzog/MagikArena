@@ -7,7 +7,7 @@
 #include "ExplosiveBarrel.generated.h"
 
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API AExplosiveBarrel : public AActor
+class MAGIKARENA_API AExplosiveBarrel : public AActor
 {
 	GENERATED_BODY()
 	

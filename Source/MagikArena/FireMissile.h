@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API AFireMissile : public ABaseMissile
+class MAGIKARENA_API AFireMissile : public ABaseMissile
 {
 	GENERATED_BODY()
 	virtual void applySpecialEffect(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit) override;

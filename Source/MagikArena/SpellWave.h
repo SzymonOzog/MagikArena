@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ASpellWave : public ABaseSpell
+class MAGIKARENA_API ASpellWave : public ABaseSpell
 {
 	GENERATED_BODY()
 public:

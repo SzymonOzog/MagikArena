@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ASpellOilStain : public ABaseSpell
+class MAGIKARENA_API ASpellOilStain : public ABaseSpell
 {
 	GENERATED_BODY()
 public:

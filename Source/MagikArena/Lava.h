@@ -7,7 +7,7 @@
 #include "Lava.generated.h"
 
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ALava : public AActor
+class MAGIKARENA_API ALava : public AActor
 {
 	GENERATED_BODY()
 	

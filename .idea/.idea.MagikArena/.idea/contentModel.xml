@@ -40817,6 +40817,8 @@
       <e p="UE4Game.Target.cs" t="Include" />
     </e>
     <e p="E:\Programowanie\UnrealEngine\MagikArena" t="IncludeFlat">
+      <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
       <e p="Config" t="Include">
         <e p="DefaultEditor.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
@@ -40834,11 +40836,37 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Source" t="Include">
         <e p="MagikArena" t="Include">
+          <e p="AirMissile.cpp" t="Include" />
+          <e p="AirMissile.h" t="Include" />
+          <e p="BaseCharacter.cpp" t="Include" />
+          <e p="BaseCharacter.h" t="Include" />
+          <e p="BaseMissile.cpp" t="Include" />
+          <e p="BaseMissile.h" t="Include" />
+          <e p="BaseSpell.cpp" t="Include" />
+          <e p="BaseSpell.h" t="Include" />
+          <e p="EarthMissile.cpp" t="Include" />
+          <e p="EarthMissile.h" t="Include" />
+          <e p="Explosion.cpp" t="Include" />
+          <e p="Explosion.h" t="Include" />
+          <e p="ExplosiveBarrel.cpp" t="Include" />
+          <e p="ExplosiveBarrel.h" t="Include" />
+          <e p="FireMissile.cpp" t="Include" />
+          <e p="FireMissile.h" t="Include" />
+          <e p="Lava.cpp" t="Include" />
+          <e p="Lava.h" t="Include" />
           <e p="MagikArena.Build.cs" t="Include" />
           <e p="MagikArena.cpp" t="Include" />
           <e p="MagikArena.h" t="Include" />
           <e p="MagikArenaGameModeBase.cpp" t="Include" />
           <e p="MagikArenaGameModeBase.h" t="Include" />
+          <e p="SpellMeteor.cpp" t="Include" />
+          <e p="SpellMeteor.h" t="Include" />
+          <e p="SpellOilStain.cpp" t="Include" />
+          <e p="SpellOilStain.h" t="Include" />
+          <e p="SpellWave.cpp" t="Include" />
+          <e p="SpellWave.h" t="Include" />
+          <e p="Spikes.cpp" t="Include" />
+          <e p="Spikes.h" t="Include" />
         </e>
         <e p="MagikArena.Target.cs" t="Include" />
         <e p="MagikArenaEditor.Target.cs" t="Include" />

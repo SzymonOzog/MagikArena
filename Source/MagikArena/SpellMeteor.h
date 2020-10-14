@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class SLAUGHTERTHEVILLAGE_API ASpellMeteor : public ABaseSpell
+class MAGIKARENA_API ASpellMeteor : public ABaseSpell
 {
 	GENERATED_BODY()
 public:
