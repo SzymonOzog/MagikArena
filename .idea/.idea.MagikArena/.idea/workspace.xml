@@ -8,8 +8,6 @@
     <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +24,11 @@
         <option value="$PROJECT_DIR$/Source/MagikArena/SpellMeteor.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/MagikArena.Build.cs" />
         <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" />
       </list>
     </option>
   </component>
@@ -265,7 +265,7 @@
       <updated>1602673031502</updated>
       <workItem from="1602673066578" duration="3077000" />
       <workItem from="1602686835212" duration="1160000" />
-      <workItem from="1602826061934" duration="2479000" />
+      <workItem from="1602826061934" duration="3581000" />
     </task>
     <servers />
   </component>

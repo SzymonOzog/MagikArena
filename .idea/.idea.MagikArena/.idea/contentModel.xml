@@ -40846,6 +40846,8 @@
           <e p="BaseMissile.h" t="Include" />
           <e p="BaseSpell.cpp" t="Include" />
           <e p="BaseSpell.h" t="Include" />
+          <e p="EarthCharacter.cpp" t="Include" />
+          <e p="EarthCharacter.h" t="Include" />
           <e p="EarthMissile.cpp" t="Include" />
           <e p="EarthMissile.h" t="Include" />
           <e p="Explosion.cpp" t="Include" />
