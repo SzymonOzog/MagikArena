@@ -40836,6 +40836,8 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Source" t="Include">
         <e p="MagikArena" t="Include">
+          <e p="AirCharacter.cpp" t="Include" />
+          <e p="AirCharacter.h" t="Include" />
           <e p="AirMissile.cpp" t="Include" />
           <e p="AirMissile.h" t="Include" />
           <e p="BaseCharacter.cpp" t="Include" />
