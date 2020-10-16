@@ -48,6 +48,8 @@ private:
 	FTransform CalculateMissileSpawnTransform() const;
 	void AimSpell();
 	void CastSpell();
+	void MovementAbility();
+	virtual void MovementAbilityImplementation() {}
 	
 	UPROPERTY(EditDefaultsOnly)
 	float Speed = 1.0f;
@@ -79,5 +81,7 @@ private:
 	bool bIsAimingSpell = false;
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class ABaseSpell> SpellClass;
-
+	UPROPERTY(EditAnywhere)
+	float MovementAbilityCooldown = 4.0f;
+	float MovementAbilityLastCast = 0.0f;
 };

@@ -118,6 +118,7 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Pressed, this, &ABaseCharacter::Attack);
 	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Released, this, &ABaseCharacter::StopAttacking);
+    PlayerInputComponent->BindAction(TEXT("SpecialMovement"), IE_Released, this, &ABaseCharacter::MovementAbility);
 
 }
 
@@ -211,6 +212,15 @@ void ABaseCharacter::CastSpell()
 		SpellIndicator->Destroy();
 	}
 	 
+}
+
+void ABaseCharacter::MovementAbility()
+{
+	if(GetWorld()->GetTimeSeconds() - MovementAbilityCooldown >= MovementAbilityLastCast)
+	{
+		MovementAbilityLastCast = GetWorld()->GetTimeSeconds();
+		MovementAbilityImplementation();
+	}
 }
 
 void ABaseCharacter::PushBack(FVector PushDirection, float Duration)
