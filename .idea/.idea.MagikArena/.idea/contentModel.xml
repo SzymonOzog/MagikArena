@@ -40823,6 +40823,7 @@
         <e p="DefaultEditor.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
         <e p="DefaultGame.ini" t="Include" />
+        <e p="DefaultInput.ini" t="Include" />
       </e>
       <e p="Engine" t="Include" />
       <e p="Games" t="Include" />
@@ -40854,6 +40855,8 @@
           <e p="Explosion.h" t="Include" />
           <e p="ExplosiveBarrel.cpp" t="Include" />
           <e p="ExplosiveBarrel.h" t="Include" />
+          <e p="FireCharacter.cpp" t="Include" />
+          <e p="FireCharacter.h" t="Include" />
           <e p="FireMissile.cpp" t="Include" />
           <e p="FireMissile.h" t="Include" />
           <e p="Lava.cpp" t="Include" />
