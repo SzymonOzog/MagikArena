@@ -13,7 +13,7 @@ UCLASS()
 class MAGIKARENA_API AAirCharacter : public ABaseCharacter
 {
 	GENERATED_BODY()
-private:
+	//DASH
 	virtual void MovementAbilityImplementation() override;
 	UPROPERTY(EditDefaultsOnly)
 	float DashStrength = 300.0f;

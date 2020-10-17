@@ -19,6 +19,7 @@ void AEarthCharacter::SetupUndergroundInput(UInputComponent* PlayerInputComponen
     PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 }
 
+//HIDE UNDERGROUND
 void AEarthCharacter::MovementAbilityImplementation()
 {
     if(!GetCharacterMovement()->IsFalling())

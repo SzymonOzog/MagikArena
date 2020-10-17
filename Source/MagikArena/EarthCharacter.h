@@ -16,6 +16,7 @@ class MAGIKARENA_API AEarthCharacter : public ABaseCharacter
 public:
 	void SetupUndergroundInput(UInputComponent* PlayerInputComponent);	
 private:
+	//HIDE UNDERGROUND
 	virtual void MovementAbilityImplementation() override;
 	UPROPERTY(EditAnywhere)
 	float HideUndergroundDuration = 1.5f;
