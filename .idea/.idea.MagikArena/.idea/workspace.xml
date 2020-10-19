@@ -5,14 +5,7 @@
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MagikArena/FireCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/FireCharacter.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,6 +266,7 @@
       <workItem from="1602686835212" duration="1160000" />
       <workItem from="1602826061934" duration="3946000" />
       <workItem from="1602925552442" duration="734000" />
+      <workItem from="1603081691850" duration="338000" />
     </task>
     <servers />
   </component>
