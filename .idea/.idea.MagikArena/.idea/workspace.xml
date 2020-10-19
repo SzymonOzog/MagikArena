@@ -5,7 +5,11 @@
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="" />
+    <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,14 +24,14 @@
         <option value="$PROJECT_DIR$/Source/MagikArena/SpellMeteor.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/SpellMeteor.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/MagikArena.Build.cs" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/FireCharacter.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/FireCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" />
       </list>
     </option>
   </component>
@@ -266,7 +270,8 @@
       <workItem from="1602686835212" duration="1160000" />
       <workItem from="1602826061934" duration="3946000" />
       <workItem from="1602925552442" duration="734000" />
-      <workItem from="1603081691850" duration="338000" />
+      <workItem from="1603081691850" duration="1352000" />
+      <workItem from="1603085292792" duration="786000" />
     </task>
     <servers />
   </component>
