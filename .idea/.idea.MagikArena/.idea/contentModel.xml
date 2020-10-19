@@ -87,7 +87,6 @@
         <e p="WindowsGame.ini" t="Include" />
       </e>
     </e>
-    <e p="E:\Program Files\Epic Games\UE_4.24\Engine\Extras\VisualStudioDebugging\UE4.natvis" t="Include" />
     <e p="E:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Unused" t="ExcludeRecursive" />
     <e p="E:\Program Files\Epic Games\UE_4.24\Engine\Plugins\2D\Paper2D" t="Include">
       <e p="Config" t="Include">

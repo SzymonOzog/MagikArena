@@ -267,7 +267,7 @@
       <workItem from="1602826061934" duration="3946000" />
       <workItem from="1602925552442" duration="734000" />
       <workItem from="1603081691850" duration="1352000" />
-      <workItem from="1603085292792" duration="1492000" />
+      <workItem from="1603085292792" duration="1800000" />
     </task>
     <servers />
   </component>
@@ -280,6 +280,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603086675255">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603086675255">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603086675255">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603086675255">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
     <state x="-1413" y="101" width="644" height="888" key="find.popup" timestamp="1602685201200">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
