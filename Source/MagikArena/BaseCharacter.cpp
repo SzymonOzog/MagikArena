@@ -3,12 +3,14 @@
 #include "BaseCharacter.h"
 #include "BaseMissile.h"
 #include "BaseSpell.h"
+#include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Engine/World.h"
 #include "Engine/DecalActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "TimerManager.h"
 
 // Sets default values
@@ -16,6 +18,14 @@ ABaseCharacter::ABaseCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	SpringArm->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	SpringArm->bUsePawnControlRotation = true;
+	
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	Camera->AttachToComponent(SpringArm, FAttachmentTransformRules::KeepRelativeTransform);
+	Camera->bUsePawnControlRotation = false;
+	
 }
 
 // Called when the game starts or when spawned

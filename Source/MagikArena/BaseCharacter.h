@@ -52,6 +52,10 @@ private:
 	virtual void MovementAbilityImplementation() {}
 	
 	UPROPERTY(EditDefaultsOnly)
+	class UCameraComponent* Camera = nullptr;
+	UPROPERTY(EditDefaultsOnly)
+    class USpringArmComponent* SpringArm = nullptr;
+	UPROPERTY(EditDefaultsOnly)
 	float Speed = 1.0f;
 	UPROPERTY(EditDefaultsOnly)
 	float AirControl = 0.5f;
