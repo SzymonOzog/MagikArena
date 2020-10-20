@@ -213,7 +213,7 @@ void ABaseCharacter::AimSpell()
 	}
 }
 
-void ABaseCharacter::CastSpell()
+void ABaseCharacter::ServerCastSpell_Implementation()
 {
 	bIsAimingSpell = false;
 	if (SpellIndicator)

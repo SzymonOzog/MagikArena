@@ -56,7 +56,9 @@ private:
 	void SetupMissileSpawnParams();
 	FTransform CalculateMissileSpawnTransform() const;
 	void AimSpell();
-	void CastSpell();
+	UFUNCTION(Server, Reliable)
+	void ServerCastSpell();
+	void ServerCastSpell_Implementation();
 	void MovementAbility();
 	virtual void MovementAbilityImplementation() {}
 	
