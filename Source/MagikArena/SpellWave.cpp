@@ -57,7 +57,7 @@ void ASpellWave::OnWaveBeginOverlap(AActor* OverpalledActor, AActor* OtherActor)
         //the activation angle. This is to avoid pushing player back if he entered the wave from the back/side
         if(FVector::DotProduct(DirectionToActor, GetActorForwardVector()) >= FMath::Cos(ActivationAngleDegrees))
         {
-            Character->PushBack(GetActorForwardVector() * PushBackStrength);
+            Character->ServerPushBack(GetActorForwardVector() * PushBackStrength);
         }
     }
 }

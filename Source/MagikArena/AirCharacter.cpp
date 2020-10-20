@@ -7,5 +7,5 @@
 //DASH
 void AAirCharacter::MovementAbilityImplementation()
 {
-	PushBack(GetActorRotation().Vector() * DashStrength);
+	ServerPushBack(GetActorRotation().Vector() * DashStrength);
 }

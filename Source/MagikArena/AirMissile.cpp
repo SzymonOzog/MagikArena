@@ -18,7 +18,7 @@ void AAirMissile::applySpecialEffect(AActor* SelfActor, AActor* OtherActor, FVec
 			FVector EnemyLocation = OtherActor->GetActorLocation();
 			FVector PlayerLocation = SelfActor->GetActorLocation();
 			FVector MoveAmount = calculateMoveAmount(PlayerLocation, EnemyLocation);
-			Character->PushBack(MoveAmount);
+			Character->ServerPushBack(MoveAmount);
 		}
 	}
 }

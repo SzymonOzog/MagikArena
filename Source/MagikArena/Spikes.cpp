@@ -46,7 +46,7 @@ void ASpikes::OnSpikesHit(AActor* SelfActor, AActor* OtherActor, FVector NormalI
 				//Push the player back 
 				if (!Character->IsPlayerDead())
 				{
-					Character->PushBack(CharacterPositionInSpikesSpace * PushBackValue);
+					Character->ServerPushBack(CharacterPositionInSpikesSpace * PushBackValue);
 				}
 			}
 		}

@@ -31,8 +31,9 @@ public:
 	void ServerRotateToControllerYaw();
 	void ServerRotateToControllerYaw_Implementation();
 	inline bool IsCharacterAttacking() const { return bIsAttacking; }
-	inline void PushBack(FVector PushDirection) { PushBack(PushDirection, PushBackDuration); }
-	void PushBack(FVector PushDirection, float Duration);
+	UFUNCTION(Server, Reliable)
+	void ServerPushBack(FVector PushDirection, float Duration = 0.2f);
+	void ServerPushBack_Implementation(FVector PushDirection, float Duration = 0.2f);
 	void StopPushBack() const;
 	void HitSpikes();
 	inline float GetSpikeHitTime() const { return SpikeHitTime; }

@@ -233,7 +233,7 @@ void ABaseCharacter::MovementAbility()
 	}
 }
 
-void ABaseCharacter::PushBack(FVector PushDirection, float Duration)
+void ABaseCharacter::ServerPushBack_Implementation(FVector PushDirection, float Duration)
 {
 	PushDirection *= GetMesh()->GetMass();
 	GetCharacterMovement()->BrakingFrictionFactor = 0.0f;
