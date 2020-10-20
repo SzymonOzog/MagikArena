@@ -100,13 +100,13 @@ float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 	CurrentHealth = FMath::Clamp(CurrentHealth - DamageApplied, 0.0f, MaxHealth);
 	if (IsPlayerDead())
 	{
-		HandleDeath();
+		ServerHandleDeath();
 	}
 	return DamageAmount;
 }
 
 
-void ABaseCharacter::HandleDeath()
+void ABaseCharacter::ServerHandleDeath_Implementation()
 {
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	DetachFromControllerPendingDestroy();

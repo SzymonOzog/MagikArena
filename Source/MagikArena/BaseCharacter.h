@@ -45,8 +45,10 @@ protected:
 
 private:
 	void SetupCharacterMovement();
-	void HandleDeath();
 	void StopAttacking();
+	UFUNCTION(Server, Reliable)
+	void ServerHandleDeath();
+	void ServerHandleDeath_Implementation();
 	void RotateSpellIndicator(float DeltaTime);
 	void SetSpellIndicatorLocation() const;
 	void SetupMissileSpawnParams();
