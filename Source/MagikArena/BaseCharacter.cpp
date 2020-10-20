@@ -126,8 +126,8 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Pressed, this, &ABaseCharacter::Attack);
 	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Released, this, &ABaseCharacter::StopAttacking);
+	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Pressed, this, &ABaseCharacter::ServerAttack);
     PlayerInputComponent->BindAction(TEXT("SpecialMovement"), IE_Released, this, &ABaseCharacter::MovementAbility);
 
 }
@@ -156,7 +156,7 @@ void ABaseCharacter::MoveRight(float AxisValue)
 	}
 }
 
-void ABaseCharacter::Attack()
+void ABaseCharacter::ServerAttack_Implementation()
 {
 	//attacks are made with respect to controller rotation so
 	//we are rotating to prevent attacking with our back

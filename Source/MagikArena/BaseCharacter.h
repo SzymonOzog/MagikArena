@@ -24,8 +24,10 @@ public:
     inline float GetHealthPercent() const { return CurrentHealth / MaxHealth; }
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
-	virtual void Attack();
 	void RotateToControllerYaw();
+	UFUNCTION(Server, Reliable)
+	void ServerAttack();
+	void ServerAttack_Implementation();
 	inline bool IsCharacterAttacking() const { return bIsAttacking; }
 	inline void PushBack(FVector PushDirection) { PushBack(PushDirection, PushBackDuration); }
 	void PushBack(FVector PushDirection, float Duration);
