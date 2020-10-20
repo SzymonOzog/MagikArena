@@ -126,8 +126,8 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Released, this, &ABaseCharacter::StopAttacking);
 	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Pressed, this, &ABaseCharacter::ServerAttack);
+	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Released, this, &ABaseCharacter::ServerStopAttacking);
     PlayerInputComponent->BindAction(TEXT("SpecialMovement"), IE_Released, this, &ABaseCharacter::MovementAbility);
 
 }
@@ -190,7 +190,7 @@ FTransform ABaseCharacter::CalculateMissileSpawnTransform() const
 	return MissileSpawnTransform;
 }
 
-void ABaseCharacter::StopAttacking()
+void ABaseCharacter::ServerStopAttacking_Implementation()
 {
 	bIsAttacking = false;
 }
