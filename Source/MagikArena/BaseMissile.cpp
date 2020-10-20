@@ -21,6 +21,8 @@ ABaseMissile::ABaseMissile()
 	MissileMovement->ProjectileGravityScale = GravityScale;
 	MissileMovement->bRotationFollowsVelocity = true;
 
+	SetReplicateMovement(true);
+	
 	OnActorHit.AddDynamic(this, &ABaseMissile::OnMissileHit);
 }
 
