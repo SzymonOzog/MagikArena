@@ -57,7 +57,7 @@ void ABaseCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (bIsAimingSpell && SpellIndicator)
 	{
-		RotateToControllerYaw();
+		ServerRotateToControllerYaw();
 		RotateSpellIndicator(DeltaTime);
 		SetSpellIndicatorLocation();
 	}
@@ -160,16 +160,8 @@ void ABaseCharacter::ServerAttack_Implementation()
 {
 	//attacks are made with respect to controller rotation so
 	//we are rotating to prevent attacking with our back
-	RotateToControllerYaw();
+	ServerRotateToControllerYaw();
 	bIsAttacking = true;
-}
-
-void ABaseCharacter::RotateToControllerYaw()
-{
-	FRotator playerRotation = GetActorRotation();
-	FRotator controllerRotation = GetControlRotation();
-	playerRotation.Yaw = controllerRotation.Yaw;
-	SetActorRotation(playerRotation);
 	if (GetWorld()->GetTimeSeconds() - MissileLastCast < MissileCooldown)
 	{
 		return;
@@ -179,6 +171,14 @@ void ABaseCharacter::RotateToControllerYaw()
 	{
 		GetWorld()->SpawnActor<ABaseMissile>(MissileClass, CalculateMissileSpawnTransform(), MissileSpawnParams);
 	}
+}
+
+void ABaseCharacter::ServerRotateToControllerYaw_Implementation()
+{
+	FRotator playerRotation = GetActorRotation();
+	FRotator controllerRotation = GetControlRotation();
+	playerRotation.Yaw = controllerRotation.Yaw;
+	SetActorRotation(playerRotation);
 }
 
 FTransform ABaseCharacter::CalculateMissileSpawnTransform() const
