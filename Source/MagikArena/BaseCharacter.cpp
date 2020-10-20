@@ -57,7 +57,6 @@ void ABaseCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (bIsAimingSpell && SpellIndicator)
 	{
-		ServerRotateToControllerYaw();
 		RotateSpellIndicator(DeltaTime);
 		SetSpellIndicatorLocation();
 	}
@@ -129,6 +128,8 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Pressed, this, &ABaseCharacter::ServerAttack);
 	PlayerInputComponent->BindAction(TEXT("Attack"), IE_Released, this, &ABaseCharacter::ServerStopAttacking);
     PlayerInputComponent->BindAction(TEXT("SpecialMovement"), IE_Released, this, &ABaseCharacter::MovementAbility);
+	PlayerInputComponent->BindAction(TEXT("CastSpell"), IE_Pressed, this, &ABaseCharacter::AimSpell);
+	PlayerInputComponent->BindAction(TEXT("CastSpell"), IE_Released, this, &ABaseCharacter::ClientCastSpell);
 
 }
 
@@ -213,15 +214,19 @@ void ABaseCharacter::AimSpell()
 	}
 }
 
-void ABaseCharacter::ServerCastSpell_Implementation()
+void ABaseCharacter::ClientCastSpell_Implementation()
 {
 	bIsAimingSpell = false;
 	if (SpellIndicator)
 	{
-		GetWorld()->SpawnActor<ABaseSpell>(SpellClass, SpellIndicator->GetActorLocation(), GetActorRotation());
+		ServerCastSpell(SpellIndicator->GetActorLocation());
 		SpellIndicator->Destroy();
 	}
-	 
+}
+
+void ABaseCharacter::ServerCastSpell_Implementation(FVector SpawnLocation)
+{
+	GetWorld()->SpawnActor<ABaseSpell>(SpellClass, SpawnLocation, GetActorRotation());
 }
 
 void ABaseCharacter::MovementAbility()

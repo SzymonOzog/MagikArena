@@ -56,9 +56,12 @@ private:
 	void SetupMissileSpawnParams();
 	FTransform CalculateMissileSpawnTransform() const;
 	void AimSpell();
+	UFUNCTION(Client, Reliable)
+	void ClientCastSpell();
+	void ClientCastSpell_Implementation();
 	UFUNCTION(Server, Reliable)
-	void ServerCastSpell();
-	void ServerCastSpell_Implementation();
+	void ServerCastSpell(FVector SpawnLocation);
+	void ServerCastSpell_Implementation(FVector SpawnLocation);
 	void MovementAbility();
 	UFUNCTION(Server,Reliable)
 	virtual void ServerCastMovementAbility();
