@@ -66,6 +66,7 @@ private:
 	UFUNCTION(Server,Reliable)
 	virtual void ServerCastMovementAbility();
 	virtual void ServerCastMovementAbility_Implementation() {}
+	void GetLifetimeReplicatedProps( TArray< FLifetimeProperty > & OutLifetimeProps ) const;
 	
 	UPROPERTY(EditDefaultsOnly)
 	class UCameraComponent* Camera = nullptr;
@@ -83,6 +84,7 @@ private:
 	float CurrentHealth;
 	float SpikeHitTime;
 	float FrictionFactor;
+	UPROPERTY(Replicated)
 	bool bIsAttacking = false;
 	struct FActorSpawnParameters MissileSpawnParams;
 	FRotator SpellIndicatorRotator = FRotator(0.0f, 0.0f, 0.0f);

@@ -12,6 +12,7 @@
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "TimerManager.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 ABaseCharacter::ABaseCharacter()
@@ -236,6 +237,12 @@ void ABaseCharacter::MovementAbility()
 		MovementAbilityLastCast = GetWorld()->GetTimeSeconds();
 		ServerCastMovementAbility();
 	}
+}
+
+void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(ABaseCharacter, bIsAttacking);
 }
 
 void ABaseCharacter::ServerPushBack_Implementation(FVector PushDirection, float Duration)
