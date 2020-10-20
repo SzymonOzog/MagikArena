@@ -8,7 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Explosion.h"
 //ROCKET JUMP
-void AFireCharacter::MovementAbilityImplementation() 
+void AFireCharacter::ServerCastMovementAbility_Implementation()
 {
     if(!GetCharacterMovement()->IsFalling())
     	{

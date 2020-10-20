@@ -5,7 +5,21 @@
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="" />
+    <list default="true" id="ef9876cb-ec52-471e-9048-06ebfcdb2cbf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagikArena/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/AirMissile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/AirMissile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/FireCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/FireCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/FireCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/FireCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/SpellWave.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/SpellWave.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MagikArena/Spikes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MagikArena/Spikes.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,13 +35,16 @@
         <option value="$PROJECT_DIR$/Source/MagikArena/SpellMeteor.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/MagikArena.Build.cs" />
         <option value="$PROJECT_DIR$/Source/MagikArena/FireCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/FireCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.h" />
         <option value="$PROJECT_DIR$/Source/MagikArena/EarthCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/AirCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/AirMissile.cpp" />
         <option value="$PROJECT_DIR$/Source/MagikArena/BaseCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/SpellWave.cpp" />
+        <option value="$PROJECT_DIR$/Source/MagikArena/Spikes.cpp" />
       </list>
     </option>
   </component>
@@ -267,7 +284,11 @@
       <workItem from="1602826061934" duration="3946000" />
       <workItem from="1602925552442" duration="734000" />
       <workItem from="1603081691850" duration="1352000" />
-      <workItem from="1603085292792" duration="1800000" />
+      <workItem from="1603085292792" duration="2504000" />
+      <workItem from="1603120552908" duration="629000" />
+      <workItem from="1603121253707" duration="532000" />
+      <workItem from="1603121836066" duration="926000" />
+      <workItem from="1603170225183" duration="3281000" />
     </task>
     <servers />
   </component>
@@ -280,22 +301,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603086675255">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603172972609">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603086675255">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603172972609" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603172972609">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603086675255">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603172972609" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603172972608">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603086675255">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603172972608" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603172972609">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603086675255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603172972609" />
     <state x="-1413" y="101" width="644" height="888" key="find.popup" timestamp="1602685201200">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

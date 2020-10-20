@@ -14,7 +14,7 @@ class MAGIKARENA_API AAirCharacter : public ABaseCharacter
 {
 	GENERATED_BODY()
 	//DASH
-	virtual void MovementAbilityImplementation() override;
+	virtual void ServerCastMovementAbility_Implementation() override;
 	UPROPERTY(EditDefaultsOnly)
 	float DashStrength = 300.0f;
 };

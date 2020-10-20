@@ -229,7 +229,7 @@ void ABaseCharacter::MovementAbility()
 	if(GetWorld()->GetTimeSeconds() - MovementAbilityCooldown >= MovementAbilityLastCast)
 	{
 		MovementAbilityLastCast = GetWorld()->GetTimeSeconds();
-		MovementAbilityImplementation();
+		ServerCastMovementAbility();
 	}
 }
 

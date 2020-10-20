@@ -14,7 +14,7 @@ class MAGIKARENA_API AFireCharacter : public ABaseCharacter
 {
 	GENERATED_BODY()
 	//ROCKET JUMP
-	virtual void MovementAbilityImplementation() override;
+	virtual void ServerCastMovementAbility_Implementation() override;
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class AExplosion> RocketJumpExplosionClass;
 	UPROPERTY(EditAnywhere)

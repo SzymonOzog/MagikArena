@@ -20,7 +20,7 @@ void AEarthCharacter::SetupUndergroundInput(UInputComponent* PlayerInputComponen
 }
 
 //HIDE UNDERGROUND
-void AEarthCharacter::MovementAbilityImplementation()
+void AEarthCharacter::ServerCastMovementAbility_Implementation()
 {
     if(!GetCharacterMovement()->IsFalling())
     {

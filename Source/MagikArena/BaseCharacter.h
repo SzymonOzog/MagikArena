@@ -60,7 +60,9 @@ private:
 	void ServerCastSpell();
 	void ServerCastSpell_Implementation();
 	void MovementAbility();
-	virtual void MovementAbilityImplementation() {}
+	UFUNCTION(Server,Reliable)
+	virtual void ServerCastMovementAbility();
+	virtual void ServerCastMovementAbility_Implementation() {}
 	
 	UPROPERTY(EditDefaultsOnly)
 	class UCameraComponent* Camera = nullptr;
@@ -76,8 +78,6 @@ private:
 	float MaxHealth = 100.0f;
 	UPROPERTY(VisibleAnywhere)
 	float CurrentHealth;
-	UPROPERTY(EditDefaultsOnly)
-	float PushBackDuration = 0.2f;
 	float SpikeHitTime;
 	float FrictionFactor;
 	bool bIsAttacking = false;

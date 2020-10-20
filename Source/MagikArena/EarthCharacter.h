@@ -17,7 +17,7 @@ public:
 	void SetupUndergroundInput(UInputComponent* PlayerInputComponent);	
 private:
 	//HIDE UNDERGROUND
-	virtual void MovementAbilityImplementation() override;
+	virtual void ServerCastMovementAbility_Implementation() override;
 	UPROPERTY(EditAnywhere)
 	float HideUndergroundDuration = 1.5f;
 };

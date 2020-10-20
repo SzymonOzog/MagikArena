@@ -87,6 +87,7 @@
         <e p="WindowsGame.ini" t="Include" />
       </e>
     </e>
+    <e p="E:\Program Files\Epic Games\UE_4.24\Engine\Extras\VisualStudioDebugging\UE4.natvis" t="Include" />
     <e p="E:\Program Files\Epic Games\UE_4.24\Engine\Intermediate\Build\Unused" t="ExcludeRecursive" />
     <e p="E:\Program Files\Epic Games\UE_4.24\Engine\Plugins\2D\Paper2D" t="Include">
       <e p="Config" t="Include">
@@ -40873,6 +40874,8 @@
           <e p="SpellWave.h" t="Include" />
           <e p="Spikes.cpp" t="Include" />
           <e p="Spikes.h" t="Include" />
+          <e p="WaterCharacter.cpp" t="Include" />
+          <e p="WaterCharacter.h" t="Include" />
         </e>
         <e p="MagikArena.Target.cs" t="Include" />
         <e p="MagikArenaEditor.Target.cs" t="Include" />

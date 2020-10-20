@@ -5,7 +5,7 @@
 #include "Engine/World.h"
 
 //DASH
-void AAirCharacter::MovementAbilityImplementation()
+void AAirCharacter::ServerCastMovementAbility_Implementation()
 {
 	ServerPushBack(GetActorRotation().Vector() * DashStrength);
 }
