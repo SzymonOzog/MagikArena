@@ -24,8 +24,6 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float SpawnHeight = 2000.0f;
 	UPROPERTY(EditDefaultsOnly)
-	float Size = 3.0f;
-	UPROPERTY(EditDefaultsOnly)
 	float Speed = 3.0f;
 	UPROPERTY(EditAnywhere)
 	class UDestructibleComponent* DestructibleComponent = nullptr;

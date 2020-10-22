@@ -6,6 +6,7 @@
 #include "BaseCharacter.h"
 #include "Explosion.h"
 #include "DestructibleComponent.h"
+#include "DestructibleMesh.h"
 
 ASpellMeteor::ASpellMeteor()
 {
@@ -25,8 +26,8 @@ void ASpellMeteor::BeginPlay()
 {
     Super::BeginPlay();
 	OnActorHit.AddDynamic(this, &ASpellMeteor::OnMeteorHit);
-    DestructibleComponent->SetRelativeLocation(FVector(0.0f,0.0f, SpawnHeight));
-    DestructibleComponent->SetWorldScale3D(FVector(Size)); //TODO make it work
+    DestructibleComponent->SetRelativeLocation(FVector(0.0f,0.0f, SpawnHeight));;
+    
 }
 
 void ASpellMeteor::OnMeteorHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
