@@ -13,6 +13,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "TimerManager.h"
 #include "Net/UnrealNetwork.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values
 ABaseCharacter::ABaseCharacter()
@@ -100,13 +101,13 @@ float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 	CurrentHealth = FMath::Clamp(CurrentHealth - DamageApplied, 0.0f, MaxHealth);
 	if (IsPlayerDead())
 	{
-		ServerHandleDeath();
+		MulticastHandleDeath();
 	}
 	return DamageAmount;
 }
 
 
-void ABaseCharacter::ServerHandleDeath_Implementation()
+void ABaseCharacter::MulticastHandleDeath_Implementation()
 {
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	DetachFromControllerPendingDestroy();
@@ -265,4 +266,3 @@ void ABaseCharacter::HitSpikes()
 {
 	SpikeHitTime = GetWorld()->GetTimeSeconds();
 }
-

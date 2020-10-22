@@ -45,9 +45,9 @@ protected:
 
 private:
 	void SetupCharacterMovement();
-	UFUNCTION(Server, Reliable)
-	void ServerHandleDeath();
-	void ServerHandleDeath_Implementation();
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastHandleDeath();
+	void MulticastHandleDeath_Implementation();
 	UFUNCTION(Server, Reliable)
 	void ServerStopAttacking();
 	void ServerStopAttacking_Implementation();
