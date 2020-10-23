@@ -163,7 +163,7 @@ void ABaseCharacter::ServerAttack_Implementation()
 {
 	//attacks are made with respect to controller rotation so
 	//we are rotating to prevent attacking with our back
-	ServerRotateToControllerYaw();
+	MulticastRotateToControllerYaw();
 	bIsAttacking = true;
 	if (GetWorld()->GetTimeSeconds() - MissileLastCast < MissileCooldown)
 	{
@@ -176,12 +176,16 @@ void ABaseCharacter::ServerAttack_Implementation()
 	}
 }
 
-void ABaseCharacter::ServerRotateToControllerYaw_Implementation()
+void ABaseCharacter::MulticastRotateToControllerYaw_Implementation()
 {
-	FRotator playerRotation = GetActorRotation();
-	FRotator controllerRotation = GetControlRotation();
-	playerRotation.Yaw = controllerRotation.Yaw;
-	SetActorRotation(playerRotation);
+	FRotator PlayerRotation = GetActorRotation();
+	FRotator ControllerRotation = GetControlRotation();
+	PlayerRotation.Yaw = ControllerRotation.Yaw;
+	FString DebugText = TEXT("Called Rotate, control rotation is") + ControllerRotation.ToString();
+	UKismetSystemLibrary::PrintString(this, DebugText, false, true,  FLinearColor::Red); 
+	//UE_LOG(LogTemp, Warning, TEXT("Called Rotate, control rotation is %s"), *ControllerRotation.ToString())
+	
+	SetActorRotation(PlayerRotation);
 }
 
 FTransform ABaseCharacter::CalculateMissileSpawnTransform() const

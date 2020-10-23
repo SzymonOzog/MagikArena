@@ -28,8 +28,8 @@ public:
 	void ServerAttack();
 	void ServerAttack_Implementation();
 	UFUNCTION(Server, Reliable)
-	void ServerRotateToControllerYaw();
-	void ServerRotateToControllerYaw_Implementation();
+	void MulticastRotateToControllerYaw();
+	void MulticastRotateToControllerYaw_Implementation();
 	inline bool IsCharacterAttacking() const { return bIsAttacking; }
 	UFUNCTION(Server, Reliable)
 	void ServerPushBack(FVector PushDirection, float Duration = 0.2f);
