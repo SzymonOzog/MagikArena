@@ -38,6 +38,8 @@ public:
 	void HitSpikes();
 	inline float GetSpikeHitTime() const { return SpikeHitTime; }
 	UFUNCTION(BlueprintPure)
+	float GetTimeUntillSpell();
+	UFUNCTION(BlueprintPure)
     float GetTimeUntillMovementAbility();
 protected:
 	// Called when the game starts or when spawned

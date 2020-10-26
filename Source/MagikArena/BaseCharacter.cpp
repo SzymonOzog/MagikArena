@@ -270,6 +270,12 @@ void ABaseCharacter::HitSpikes()
 {
 	SpikeHitTime = GetWorld()->GetTimeSeconds();
 }
+
+float ABaseCharacter::GetTimeUntillSpell()
+{
+	return 0.0f;
+}
+
 float ABaseCharacter::GetTimeUntillMovementAbility()
 {
 	float TimeUntilMovementAbility = FMath::Clamp(MovementAbilityCooldown - GetWorld()->GetTimeSeconds() + MovementAbilityLastCast, 0.0f, MovementAbilityCooldown);
