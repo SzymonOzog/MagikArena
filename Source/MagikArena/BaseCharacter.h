@@ -47,6 +47,7 @@ protected:
 
 
 private:
+	void CreateHealthBar();
 	void SetupCharacterMovement();
 	UFUNCTION(NetMulticast, Reliable)
 	void MulticastHandleDeath();
@@ -75,6 +76,10 @@ private:
 	class UCameraComponent* Camera = nullptr;
 	UPROPERTY(EditDefaultsOnly)
     class USpringArmComponent* SpringArm = nullptr;
+	UPROPERTY(EditDefaultsOnly)
+	class UWidgetComponent* HealthBarName = nullptr;
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class UPlayerInfoWidget> HealthBarClass;
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<class UUserWidget> InterfaceClass;
 	UPROPERTY(EditDefaultsOnly)

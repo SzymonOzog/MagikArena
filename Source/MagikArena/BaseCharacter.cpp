@@ -3,9 +3,11 @@
 #include "BaseCharacter.h"
 #include "BaseMissile.h"
 #include "BaseSpell.h"
+#include "PlayerInfoWidget.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/WidgetComponent.h"
 #include "Engine/World.h"
 #include "Engine/DecalActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -30,6 +32,11 @@ ABaseCharacter::ABaseCharacter()
 	
 }
 
+	HealthBarName = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealhBarName"));
+	HealthBarName->SetWidgetSpace(EWidgetSpace::Screen);
+	HealthBarName->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+}	
+
 // Called when the game starts or when spawned
 void ABaseCharacter::BeginPlay()
 {
@@ -38,7 +45,17 @@ void ABaseCharacter::BeginPlay()
 	SetupCharacterMovement();
 	SetupMissileSpawnParams();
 	FrictionFactor = GetCharacterMovement()->BrakingFrictionFactor;
+	CreateHealthBar();
 	CreateWidget<UUserWidget>(GetWorld(), InterfaceClass)->AddToViewport();
+}
+
+void ABaseCharacter::CreateHealthBar()
+{
+	UPlayerInfoWidget* HealthBar = CreateWidget<UPlayerInfoWidget>(GetWorld(), HealthBarClass);
+	HealthBar->RepresentedCharacter = this;
+	HealthBarName->SetWidget(HealthBar);
+	HealthBarName->SetVisibility(true);
+	HealthBarName->RegisterComponent();
 }
 
 void ABaseCharacter::SetupCharacterMovement()
