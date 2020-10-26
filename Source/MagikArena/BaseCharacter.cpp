@@ -38,6 +38,7 @@ void ABaseCharacter::BeginPlay()
 	SetupCharacterMovement();
 	SetupMissileSpawnParams();
 	FrictionFactor = GetCharacterMovement()->BrakingFrictionFactor;
+	CreateWidget<UUserWidget>(GetWorld(), InterfaceClass)->AddToViewport();
 }
 
 void ABaseCharacter::SetupCharacterMovement()

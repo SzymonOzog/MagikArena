@@ -76,6 +76,8 @@ private:
 	UPROPERTY(EditDefaultsOnly)
     class USpringArmComponent* SpringArm = nullptr;
 	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class UUserWidget> InterfaceClass;
+	UPROPERTY(EditDefaultsOnly)
 	float Speed = 1.0f;
 	UPROPERTY(EditDefaultsOnly)
 	float AirControl = 0.5f;
