@@ -90,7 +90,7 @@ private:
 	float JumpHeight = 600.0f;
 	UPROPERTY(EditDefaultsOnly)
 	float MaxHealth = 100.0f;
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Replicated)
 	float CurrentHealth;
 	float SpikeHitTime;
 	float FrictionFactor;

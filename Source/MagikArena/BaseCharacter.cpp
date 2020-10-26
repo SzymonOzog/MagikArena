@@ -29,8 +29,6 @@ ABaseCharacter::ABaseCharacter()
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->AttachToComponent(SpringArm, FAttachmentTransformRules::KeepRelativeTransform);
 	Camera->bUsePawnControlRotation = false;
-	
-}
 
 	HealthBarName = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealhBarName"));
 	HealthBarName->SetWidgetSpace(EWidgetSpace::Screen);
@@ -266,6 +264,7 @@ void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(ABaseCharacter, bIsAttacking);
+	DOREPLIFETIME(ABaseCharacter, CurrentHealth);
 }
 
 void ABaseCharacter::ServerPushBack_Implementation(FVector PushDirection, float Duration)
