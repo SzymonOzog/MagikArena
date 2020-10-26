@@ -37,7 +37,8 @@ public:
 	void StopPushBack() const;
 	void HitSpikes();
 	inline float GetSpikeHitTime() const { return SpikeHitTime; }
-
+	UFUNCTION(BlueprintPure)
+    float GetTimeUntillMovementAbility();
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
