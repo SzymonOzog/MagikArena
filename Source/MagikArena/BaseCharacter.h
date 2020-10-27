@@ -115,4 +115,6 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MovementAbilityCooldown = 4.0f;
 	float MovementAbilityLastCast = 0.0f;
+	UPROPERTY(EditDefaultsOnly)
+	float RespawnTime = 5.0f;
 };

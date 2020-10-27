@@ -4,6 +4,7 @@
 #include "BaseMissile.h"
 #include "BaseSpell.h"
 #include "PlayerInfoWidget.h"
+#include "MagikArenaGameModeBase.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
@@ -119,6 +120,19 @@ float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 	CurrentHealth = FMath::Clamp(CurrentHealth - DamageApplied, 0.0f, MaxHealth);
 	if (IsPlayerDead())
 	{
+		if(APlayerController* PlayerController = Cast<APlayerController>(Controller))
+		{
+	        FTimerHandle Handle;
+	        GetWorldTimerManager().SetTimer(Handle, [this, PlayerController]()
+	        {
+	        Cast<AMagikArenaGameModeBase>(GetWorld()->GetAuthGameMode())->Respawn(PlayerController);
+	        }, RespawnTime, false);
+			//Cast<AMagikArenaGameModeBase>(GetWorld()->GetAuthGameMode())->Respawn(PlayerController);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Not a player controller"))
+		}
 		MulticastHandleDeath();
 	}
 	return DamageAmount;
@@ -132,6 +146,8 @@ void ABaseCharacter::MulticastHandleDeath_Implementation()
 	//Turn on meshes physics to make it fall on the ground
 	GetMesh()->SetSimulatePhysics(true);
 	GetMesh()->SetCollisionProfileName(TEXT("BlockAll"));
+	FTimerHandle Handle;
+	GetWorldTimerManager().SetTimer(Handle, [this](){Destroy();}, RespawnTime, false);
 }
 
 
