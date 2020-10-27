@@ -33,6 +33,7 @@ ABaseCharacter::ABaseCharacter()
 	HealthBarName = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealhBarName"));
 	HealthBarName->SetWidgetSpace(EWidgetSpace::Screen);
 	HealthBarName->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	HealthBarName->SetRelativeLocation(FVector(0.0f,0.0f,110.0f));
 }	
 
 // Called when the game starts or when spawned
