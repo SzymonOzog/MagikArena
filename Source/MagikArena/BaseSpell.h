@@ -15,6 +15,7 @@ public:
 	ABaseSpell();
 	virtual void Tick(float DeltaTime) override;
 	inline float GetCastingRange() const { return CastingRange; }
+	inline float GetCooldown() const { return Cooldown; }
 protected:
 	virtual void BeginPlay() override;
 	
@@ -22,8 +23,10 @@ protected:
 	USceneComponent* Root = nullptr;
 	UPROPERTY(EditAnywhere)
 	float Damage = 0.0f;
-
+	
 private:
+	UPROPERTY(EditDefaultsOnly)
+	float Cooldown = 8.0f;
 	UPROPERTY(EditAnywhere)
 	float CastingRange = 5000.0f;
 };
