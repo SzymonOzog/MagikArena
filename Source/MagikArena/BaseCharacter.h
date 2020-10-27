@@ -111,6 +111,7 @@ private:
 	bool bIsAimingSpell = false;
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class ABaseSpell> SpellClass;
+	float SpellLastCast = 0.0f;
 	UPROPERTY(EditAnywhere)
 	float MovementAbilityCooldown = 4.0f;
 	float MovementAbilityLastCast = 0.0f;

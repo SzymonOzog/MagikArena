@@ -228,11 +228,15 @@ void ABaseCharacter::SetupMissileSpawnParams()
 
 void ABaseCharacter::AimSpell()
 {
-	if (SpellIndicatorClass)
+	float SpellCooldown = SpellClass->GetDefaultObject<ABaseSpell>()->GetCooldown();
+	if(GetWorld()->GetTimeSeconds() - SpellCooldown >= SpellLastCast)
 	{
-		bIsAimingSpell = true;
-		SpellIndicator = GetWorld()->SpawnActor<ADecalActor>(SpellIndicatorClass, GetActorLocation(), FRotator::ZeroRotator);
-		SpellIndicatorRotator = SpellIndicator->GetActorRotation();
+		if (SpellIndicatorClass)
+		{
+			bIsAimingSpell = true;
+			SpellIndicator = GetWorld()->SpawnActor<ADecalActor>(SpellIndicatorClass, GetActorLocation(), FRotator::ZeroRotator);
+			SpellIndicatorRotator = SpellIndicator->GetActorRotation();
+		}
 	}
 }
 
@@ -241,8 +245,10 @@ void ABaseCharacter::ClientCastSpell_Implementation()
 	bIsAimingSpell = false;
 	if (SpellIndicator)
 	{
+		SpellLastCast = GetWorld()->GetTimeSeconds();
 		ServerCastSpell(SpellIndicator->GetActorLocation());
 		SpellIndicator->Destroy();
+		SpellIndicator = nullptr;
 	}
 }
 
@@ -290,7 +296,9 @@ void ABaseCharacter::HitSpikes()
 
 float ABaseCharacter::GetTimeUntillSpell()
 {
-	return 0.0f;
+	float SpellCooldown = SpellClass->GetDefaultObject<ABaseSpell>()->GetCooldown();
+	float TimeUntilSpell = FMath::Clamp(SpellCooldown - GetWorld()->GetTimeSeconds() + SpellLastCast, 0.0f, SpellCooldown);
+	return TimeUntilSpell;
 }
 
 float ABaseCharacter::GetTimeUntillMovementAbility()
