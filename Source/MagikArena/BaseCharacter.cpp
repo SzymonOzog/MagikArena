@@ -46,8 +46,14 @@ void ABaseCharacter::BeginPlay()
 	SetupCharacterMovement();
 	SetupMissileSpawnParams();
 	FrictionFactor = GetCharacterMovement()->BrakingFrictionFactor;
-	CreateHealthBar();
-	CreateWidget<UUserWidget>(GetWorld(), InterfaceClass)->AddToViewport();
+	if(HealthBarClass)
+	{
+		CreateHealthBar();
+	}
+	if(InterfaceClass)
+	{
+		CreateWidget<UUserWidget>(GetWorld(), InterfaceClass)->AddToViewport();
+	}
 }
 
 void ABaseCharacter::CreateHealthBar()
