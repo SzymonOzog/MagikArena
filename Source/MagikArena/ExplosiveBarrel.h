@@ -24,4 +24,6 @@ private:
 	TSubclassOf<class AExplosion> ExplosionClass;
 	UPROPERTY(EditDefaultsOnly)
 	UStaticMeshComponent* Mesh = nullptr;
+	UPROPERTY(EditDefaultsOnly)
+	float RespawnTime = 10.0f;
 };

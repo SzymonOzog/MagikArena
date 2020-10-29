@@ -4,6 +4,8 @@
 #include "ExplosiveBarrel.h"
 #include "Explosion.h"
 #include "Engine/World.h"
+#include "Components/StaticMeshComponent.h"
+#include "TimerManager.h"
 AExplosiveBarrel::AExplosiveBarrel()
 {
 	PrimaryActorTick.bCanEverTick = false;
@@ -22,8 +24,17 @@ void AExplosiveBarrel::OnBarrelOverlap(AActor* OverlappedActor, AActor* OtherAct
 	{
 		if (ExplosionClass)
 		{
-			Destroy();
+			const auto MeshCollsion = Mesh->GetCollisionProfileName();
+			Mesh->SetCollisionProfileName(FName("Ghost"));
+			SetActorHiddenInGame(true);
 			GetWorld()->SpawnActor<AExplosion>(ExplosionClass, GetActorLocation(), FRotator::ZeroRotator);
+
+			FTimerHandle Handle;
+			GetWorldTimerManager().SetTimer(Handle, [this, MeshCollsion]()
+			{
+				Mesh->SetCollisionProfileName(MeshCollsion);
+				SetActorHiddenInGame(false);
+			}, RespawnTime, false);
 		}
 	}
 }
