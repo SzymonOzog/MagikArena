@@ -27,6 +27,8 @@ private:
 	TSubclassOf<ADecalActor> BurningOilStainClass;
 	UPROPERTY()
 	ADecalActor* Decal = nullptr;
+	UPROPERTY(EditDefaultsOnly)
+	float LifetimeSeconds = 10.0f;
 	UPROPERTY(EditAnywhere)
 	float SlowStrength = 2.0f;
 	struct FTimerHandle BurnTimerHandle;

@@ -30,6 +30,10 @@ void ASpellOilStain::BeginPlay()
     OnActorBeginOverlap.AddDynamic(this, &ASpellOilStain::OnOilBeginOverlap);
     OnActorEndOverlap.AddDynamic(this, &ASpellOilStain::OnOilEndOverlap);
     Decal = GetWorld()->SpawnActor<ADecalActor>(OilStainClass, GetActorLocation(), GetActorRotation());
+    Decal->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
+    
+     FTimerHandle Handle;
+     GetWorldTimerManager().SetTimer(Handle,[this](){ Destroy(); Decal->Destroy(); }, LifetimeSeconds, false);
 }
 
 void ASpellOilStain::OnOilBeginOverlap(AActor* OverpalledActor, AActor* OtherActor)
