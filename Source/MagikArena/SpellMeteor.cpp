@@ -6,7 +6,7 @@
 #include "BaseCharacter.h"
 #include "Explosion.h"
 #include "DestructibleComponent.h"
-#include "DestructibleMesh.h"
+#include "TimerManager.h"
 
 ASpellMeteor::ASpellMeteor()
 {
@@ -38,4 +38,6 @@ void ASpellMeteor::OnMeteorHit(AActor* SelfActor, AActor* OtherActor, FVector No
     }
     DestructibleComponent->ApplyDamage(1.0f, DestructibleComponent->GetComponentLocation(), NormalImpulse, 100.0f);
     OnActorHit.RemoveDynamic(this, &ASpellMeteor::OnMeteorHit);
+    FTimerHandle Handle;
+    GetWorldTimerManager().SetTimer(Handle, [this]() {Destroy();}, DebrisLifetime, false);
 }
