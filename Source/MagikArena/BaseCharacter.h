@@ -102,7 +102,7 @@ private:
 	TSubclassOf<class ABaseMissile> MissileClass;
 	float MissileSpawnDistance = 150.0f;
 	UPROPERTY(EditAnywhere)
-	float MissileCooldown = 0.4f;
+	float MissileCooldown = 1.5f;
 	float MissileLastCast = 0.0f;
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<class ADecalActor> SpellIndicatorClass;
