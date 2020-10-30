@@ -28,6 +28,12 @@ void ASpikes::Tick(float DeltaTime)
 
 void ASpikes::OnSpikesHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
 {
+	ServerSpikesHit(SelfActor, OtherActor, NormalImpulse, Hit);
+}
+
+void ASpikes::ServerSpikesHit_Implementation(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse,
+	const FHitResult& Hit)
+{
 	if (ABaseCharacter* Character = Cast<ABaseCharacter>(OtherActor))
 	{
 		if (GetWorld()->GetTimeSeconds() - Character->GetSpikeHitTime() >= TimeBetweenHits)
