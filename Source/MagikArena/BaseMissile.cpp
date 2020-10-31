@@ -33,6 +33,19 @@ void ABaseMissile::BeginPlay()
 	OwningPlayer = Cast<ABaseCharacter>(GetOwner());
 }
 
+void ABaseMissile::ServerCalculateMissileVelocity_Implementation()
+{
+	FVector LookingDirection = OwningPlayer->GetControlRotation().Vector();
+	//OwningPlayers looking direction is in global space, we need to translate it to Missiles local space
+	FVector TranslatedLookingDirection = UKismetMathLibrary::InverseTransformDirection(GetTransform(), LookingDirection);
+	MulticastSetMissileVelocity(TranslatedLookingDirection * MissileSpeed);
+}
+
+void ABaseMissile::MulticastSetMissileVelocity_Implementation(const FVector& NewVelocity)
+{
+	MissileMovement->SetVelocityInLocalSpace(NewVelocity);
+}
+
 // Called every frame
 void ABaseMissile::Tick(float DeltaTime)
 {
@@ -40,10 +53,7 @@ void ABaseMissile::Tick(float DeltaTime)
 	//if player is holding LMB change velocity according to his location
 	if (OwningPlayer && OwningPlayer->IsCharacterAttacking())
 	{
-		FVector LookingDirection = OwningPlayer->GetControlRotation().Vector();
-		//OwningPlayers looking direction is in global space, we need to translate it to Missiles local space
-		FVector TranslatedLookingDirection = UKismetMathLibrary::InverseTransformDirection(GetTransform(), LookingDirection);
-		MissileMovement->SetVelocityInLocalSpace(TranslatedLookingDirection * MissileSpeed);
+		ServerCalculateMissileVelocity();		
 	}
 }
 

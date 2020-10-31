@@ -25,6 +25,12 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
+	UFUNCTION(Server,Unreliable)
+	void ServerCalculateMissileVelocity();
+	void ServerCalculateMissileVelocity_Implementation();
+	UFUNCTION(NetMulticast, Unreliable)
+	void MulticastSetMissileVelocity(const FVector& NewVelocity);
+	void MulticastSetMissileVelocity_Implementation(const FVector& NewVelocity);	
 	UPROPERTY(EditDefaultsOnly, Category = "Components")
 	UStaticMeshComponent* MissileMesh = nullptr;
 	UPROPERTY(EditDefaultsOnly, Category = "Components")
