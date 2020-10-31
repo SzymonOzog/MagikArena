@@ -94,7 +94,6 @@ private:
 	float CurrentHealth;
 	float SpikeHitTime;
 	float FrictionFactor;
-	UPROPERTY(Replicated)
 	bool bIsAttacking = false;
 	struct FActorSpawnParameters MissileSpawnParams;
 	FRotator SpellIndicatorRotator = FRotator(0.0f, 0.0f, 0.0f);

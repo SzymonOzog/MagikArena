@@ -293,7 +293,6 @@ void ABaseCharacter::MovementAbility()
 void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-	DOREPLIFETIME(ABaseCharacter, bIsAttacking);
 	DOREPLIFETIME(ABaseCharacter, CurrentHealth);
 }
 
