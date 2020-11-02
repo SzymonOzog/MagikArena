@@ -36,6 +36,11 @@ ABaseCharacter::ABaseCharacter()
 	HealthBarName->SetWidgetSpace(EWidgetSpace::Screen);
 	HealthBarName->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
 	HealthBarName->SetRelativeLocation(FVector(0.0f,0.0f,110.0f));
+
+	Crosshair = CreateDefaultSubobject<UWidgetComponent>(TEXT("Crosshair"));
+	Crosshair->SetWidgetSpace(EWidgetSpace::Screen);
+	Crosshair->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	Crosshair->SetVisibility(false);
 }	
 
 // Called when the game starts or when spawned
@@ -46,6 +51,11 @@ void ABaseCharacter::BeginPlay()
 	SetupCharacterMovement();
 	SetupMissileSpawnParams();
 	FrictionFactor = GetCharacterMovement()->BrakingFrictionFactor;
+	if(IsLocallyControlled())
+	{
+		Crosshair->SetVisibility(true);
+		//ClientShowCrosshairWidget();
+	}
 	if(HealthBarClass)
 	{
 		CreateHealthBar();
@@ -87,6 +97,11 @@ void ABaseCharacter::Tick(float DeltaTime)
 		RotateSpellIndicator(DeltaTime);
 		SetSpellIndicatorLocation();
 	}
+	if(IsLocallyControlled())
+	{
+		Crosshair->SetVisibility(true);
+		DrawCrosshair();
+	}
 }
 
 void ABaseCharacter::RotateSpellIndicator(float DeltaTime)
@@ -110,14 +125,14 @@ void ABaseCharacter::SetSpellIndicatorLocation() const
 		SpellIndicator->SetActorLocation(Hit.Location);
 	}
 	else// Line trace from the end to the ground and draw the Spell Indicator there
-		{
+	{
 		FVector LineTraceEndToGround = LineTraceEnd;
 		LineTraceEndToGround.Z -= SpellRange;
 		if (GetWorld()->LineTraceSingleByChannel(Hit, LineTraceEnd, LineTraceEndToGround, ECollisionChannel::ECC_Visibility))
 		{
 			SpellIndicator->SetActorLocation(Hit.Location);				
 		}
-		}
+	}
 }
 
 float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
@@ -133,7 +148,6 @@ float ABaseCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 	        {
 	        Cast<AMagikArenaGameModeBase>(GetWorld()->GetAuthGameMode())->Respawn(PlayerController);
 	        }, RespawnTime, false);
-			//Cast<AMagikArenaGameModeBase>(GetWorld()->GetAuthGameMode())->Respawn(PlayerController);
 		}
 		else
 		{
@@ -212,7 +226,7 @@ void ABaseCharacter::ServerAttack_Implementation()
 	MissileLastCast = GetWorld()->GetTimeSeconds();
 	if (MissileClass)
 	{
-		GetWorld()->SpawnActor<ABaseMissile>(MissileClass, CalculateMissileSpawnTransform(), MissileSpawnParams);
+		CurrentMissile = GetWorld()->SpawnActor<ABaseMissile>(MissileClass, CalculateMissileSpawnTransform(), MissileSpawnParams);
 	}
 }
 
@@ -287,6 +301,29 @@ void ABaseCharacter::MovementAbility()
 	{
 		MovementAbilityLastCast = GetWorld()->GetTimeSeconds();
 		ServerCastMovementAbility();
+	}
+}
+
+void ABaseCharacter::DrawCrosshair()
+{
+	FTransform LineTraceTransform;
+	if(IsValid(CurrentMissile))
+	{
+		LineTraceTransform = CurrentMissile->GetTransform();
+		UE_LOG(LogTemp, Warning, TEXT("MissileIsValid"))
+	}
+	else
+	{
+		LineTraceTransform = CalculateMissileSpawnTransform();
+	}
+	FVector LineTraceStart = LineTraceTransform.GetLocation();
+	FVector LineTraceEnd = LineTraceStart + LineTraceTransform.GetRotation().Vector() * 10000.0f;
+	FHitResult Hit;
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+	if(GetWorld()->LineTraceSingleByChannel(Hit, LineTraceStart, LineTraceEnd, ECollisionChannel::ECC_Visibility))
+	{
+		Crosshair->SetWorldLocation(Hit.Location);
 	}
 }
 

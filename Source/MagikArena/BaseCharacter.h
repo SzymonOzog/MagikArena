@@ -70,7 +70,7 @@ private:
 	UFUNCTION(Server,Reliable)
 	virtual void ServerCastMovementAbility();
 	virtual void ServerCastMovementAbility_Implementation() {}
-	void GetLifetimeReplicatedProps( TArray< FLifetimeProperty > & OutLifetimeProps ) const;
+	void DrawCrosshair();
 	
 	UPROPERTY(EditDefaultsOnly)
 	class UCameraComponent* Camera = nullptr;
@@ -78,6 +78,8 @@ private:
     class USpringArmComponent* SpringArm = nullptr;
 	UPROPERTY(EditDefaultsOnly)
 	class UWidgetComponent* HealthBarName = nullptr;
+	UPROPERTY(EditDefaultsOnly)
+	class UWidgetComponent* Crosshair = nullptr;
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<class UPlayerInfoWidget> HealthBarClass;
 	UPROPERTY(EditDefaultsOnly)
@@ -99,6 +101,8 @@ private:
 	FRotator SpellIndicatorRotator = FRotator(0.0f, 0.0f, 0.0f);
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class ABaseMissile> MissileClass;
+	UPROPERTY()
+	ABaseMissile* CurrentMissile;
 	float MissileSpawnDistance = 150.0f;
 	UPROPERTY(EditAnywhere)
 	float MissileCooldown = 1.5f;
