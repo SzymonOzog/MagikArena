@@ -46,6 +46,11 @@ void ABaseMissile::MulticastSetMissileVelocity_Implementation(const FVector& New
 	MissileMovement->SetVelocityInLocalSpace(NewVelocity);
 }
 
+void ABaseMissile::ServerCallDestroy_Implementation()
+{
+	Destroy();
+}
+
 // Called every frame
 void ABaseMissile::Tick(float DeltaTime)
 {
@@ -64,6 +69,6 @@ void ABaseMissile::OnMissileHit(AActor* SelfActor, AActor* OtherActor, FVector N
 	{
 		Character->TakeDamage(Damage, FDamageEvent(), GetInstigator()->GetController(), GetOwner());
 	}
-	Destroy();
+	ServerCallDestroy();
 }
 

@@ -30,7 +30,9 @@ private:
 	void ServerCalculateMissileVelocity_Implementation();
 	UFUNCTION(NetMulticast, Unreliable)
 	void MulticastSetMissileVelocity(const FVector& NewVelocity);
-	void MulticastSetMissileVelocity_Implementation(const FVector& NewVelocity);	
+	void MulticastSetMissileVelocity_Implementation(const FVector& NewVelocity);
+	UFUNCTION(Server, Reliable)
+	void ServerCallDestroy();
 	UPROPERTY(EditDefaultsOnly, Category = "Components")
 	UStaticMeshComponent* MissileMesh = nullptr;
 	UPROPERTY(EditDefaultsOnly, Category = "Components")
