@@ -114,13 +114,12 @@ void ABaseCharacter::RotateSpellIndicator(float DeltaTime)
 
 void ABaseCharacter::SetSpellIndicatorLocation() const
 {
-	FVector PlayerViewLocation;
-	FRotator PlayerViewRotation;
-	Controller->GetPlayerViewPoint(PlayerViewLocation, PlayerViewRotation);
+	FTransform MissileSpawnTransform = CalculateMissileSpawnTransform();
+	FVector MissileSpawnLocation = MissileSpawnTransform.GetLocation();
 	float SpellRange = 	SpellClass->GetDefaultObject<ABaseSpell>()->GetCastingRange();
-	FVector LineTraceEnd = PlayerViewLocation + PlayerViewRotation.Vector() * SpellRange;
+	FVector LineTraceEnd = MissileSpawnLocation + MissileSpawnTransform.GetRotation().Vector() * SpellRange;
 	FHitResult Hit;
-	if (GetWorld()->LineTraceSingleByChannel(Hit, PlayerViewLocation, LineTraceEnd, ECollisionChannel::ECC_Visibility))
+	if (GetWorld()->LineTraceSingleByChannel(Hit, MissileSpawnLocation, LineTraceEnd, ECollisionChannel::ECC_Visibility))
 	{
 		SpellIndicator->SetActorLocation(Hit.Location);
 	}
@@ -237,8 +236,6 @@ void ABaseCharacter::MulticastRotateToControllerYaw_Implementation()
 	PlayerRotation.Yaw = ControllerRotation.Yaw;
 	FString DebugText = TEXT("Called Rotate, control rotation is") + ControllerRotation.ToString();
 	UKismetSystemLibrary::PrintString(this, DebugText, false, true,  FLinearColor::Red); 
-	//UE_LOG(LogTemp, Warning, TEXT("Called Rotate, control rotation is %s"), *ControllerRotation.ToString())
-	
 	SetActorRotation(PlayerRotation);
 }
 
