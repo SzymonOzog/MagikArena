@@ -101,7 +101,7 @@ private:
 	FRotator SpellIndicatorRotator = FRotator(0.0f, 0.0f, 0.0f);
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class ABaseMissile> MissileClass;
-	UPROPERTY()
+	UPROPERTY(Replicated)
 	ABaseMissile* CurrentMissile;
 	float MissileSpawnDistance = 150.0f;
 	UPROPERTY(EditAnywhere)

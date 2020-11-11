@@ -328,6 +328,7 @@ void ABaseCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(ABaseCharacter, CurrentHealth);
+	DOREPLIFETIME(ABaseCharacter, CurrentMissile);
 }
 
 void ABaseCharacter::ServerPushBack_Implementation(FVector PushDirection, float Duration)
