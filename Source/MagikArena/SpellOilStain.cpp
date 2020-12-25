@@ -29,7 +29,7 @@ void ASpellOilStain::BeginPlay()
     Super::BeginPlay();
     OnActorBeginOverlap.AddDynamic(this, &ASpellOilStain::OnOilBeginOverlap);
     OnActorEndOverlap.AddDynamic(this, &ASpellOilStain::OnOilEndOverlap);
-    Decal = GetWorld()->SpawnActor<ADecalActor>(OilStainClass, GetActorLocation(), GetActorRotation());
+    Decal = GetWorld()->SpawnActor<ADecalActor>(BurningOilStainClass, GetActorLocation(), GetActorRotation());
     Decal->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
     
      FTimerHandle Handle;

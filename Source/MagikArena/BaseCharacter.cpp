@@ -304,9 +304,11 @@ void ABaseCharacter::MovementAbility()
 void ABaseCharacter::DrawCrosshair()
 {
 	FTransform LineTraceTransform;
+	TArray<AActor*> ActorsToIgnore;
 	if(IsValid(CurrentMissile))
 	{
 		LineTraceTransform = CurrentMissile->GetTransform();
+		ActorsToIgnore.Add(CurrentMissile);
 		UE_LOG(LogTemp, Warning, TEXT("MissileIsValid"))
 	}
 	else
@@ -318,7 +320,8 @@ void ABaseCharacter::DrawCrosshair()
 	FHitResult Hit;
 	FCollisionQueryParams QueryParams;
 	QueryParams.AddIgnoredActor(this);
-	if(GetWorld()->LineTraceSingleByChannel(Hit, LineTraceStart, LineTraceEnd, ECollisionChannel::ECC_Visibility))
+	//if(GetWorld()->LineTraceSingleByChannel(Hit, LineTraceStart, LineTraceEnd, ECollisionChannel::ECC_Visibility))
+	if(UKismetSystemLibrary::SphereTraceSingle(GetWorld(),LineTraceStart,LineTraceEnd, 50.0f,ETraceTypeQuery::TraceTypeQuery1, false, ActorsToIgnore, EDrawDebugTrace::None, Hit, true))
 	{
 		Crosshair->SetWorldLocation(Hit.Location);
 	}
